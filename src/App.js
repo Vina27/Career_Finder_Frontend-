@@ -2,7 +2,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header.js';
-//import JobContainer from "./components/JobContainer"
+import JobContainer from './components/JobContainer'
+import JobCard from "./components/JobCard"
+
+
 
 // import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
@@ -30,6 +33,8 @@ class App extends Component {
       return (
         <div className="App">
          < Header />
+         <JobContainer />
+         <JobCard />
          
            
           </div>

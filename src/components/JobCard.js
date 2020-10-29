@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class JobContainer extends Component {
+class JobCard extends Component {
     render() {
         return (
             <div>
-                <p>This is Job Container!</p>
+                <h1>This is JobCard</h1>
             </div>
         );
     }
 }
 
-export default JobContainer;
+export default JobCard;
