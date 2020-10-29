@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import JobForm from './components/JobForm'
+import NewJobPostingCont from './components/NewJobPostingCont'
 
 class JobContainer extends Component {
     render() {
         return (
             <div>
-                <h1>This is job container</h1>
+                <p>This is JobContainer</p>
             </div>
         );
     }

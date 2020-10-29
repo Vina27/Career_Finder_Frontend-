@@ -1,15 +1,13 @@
-// import React, { Component } from 'react';
-// //import JobCard from "./components/JobCard"; 
+import React, { Component } from 'react';
 
+class Category extends Component {
+    render() {
+        return (
+            <div>
+                <p>This is Category</p>
+            </div>
+        );
+    }
+}
 
-// class Category extends Component {
-//     render() {
-//         return (
-//             <div>
-//                <p>This is Category!</p>
-//             </div>
-//         );
-//     }
-// }
-
-// export default Category;
+export default Category;

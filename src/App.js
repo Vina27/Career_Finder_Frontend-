@@ -2,12 +2,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header.js';
-import JobContainer from './components/JobContainer'
-import JobCard from "./components/JobCard"
+//import JobCard from './test/JobCard'; 
+//import JobContainer from './test/JobContainer'
+//import JobShowContainer from './test/JobShowContainer'
+// import JobCard from './components/JobCard'
+// import JobContainer from './components/JobContainer'
+// import JobShowContainer from './components/JobShowContainer'
+// import List from './components/List'
+// import Category from './components/Category'
+// import JobForm from './components/JobForm'
+// import NewJobPostingCont from './components/NewJobPostingCont'
 
 
 
-// import { Route, Switch, Link, NavLink } from 'react-router-dom'
+import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
 
 
@@ -33,11 +41,9 @@ class App extends Component {
       return (
         <div className="App">
          < Header />
-         <JobContainer />
-         <JobCard />
          
-           
-          </div>
+         
+        </div>
       );
   }
 }

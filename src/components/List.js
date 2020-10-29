@@ -1,14 +1,13 @@
-// import React, { Component } from 'react';
-// //import JobCard from "./components/JobCard"
+import React, { Component } from 'react';
 
-// class List extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>This is List!</h1>
-//             </div>
-//         );
-//     }
-// }
+class List extends Component {
+    render() {
+        return (
+            <div>
+                <p>This is List</p>
+            </div>
+        );
+    }
+}
 
-// export default List;
+export default List;

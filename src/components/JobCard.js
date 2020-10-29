@@ -4,7 +4,7 @@ class JobCard extends Component {
     render() {
         return (
             <div>
-                <h1>This is JobCard</h1>
+                <p>This is JobCard</p>
             </div>
         );
     }

@@ -1,14 +1,15 @@
-// import React, { Component } from 'react';
-// //mport NewJobForm from "./components/NewJobForm"
+import React, { Component } from 'react';
+import JobForm from './components/JobForm'
 
-// class NewJobPostingCont extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>This is New Job Posting Container!</h1>
-//             </div>
-//         );
-//     }
-// }
+class NewJobPostingCont extends Component {
+    render() {
+        return (
+            <div>
+                <p>This is NewJobPostingCont</p>
+                {this.state.JobForm}
+            </div>
+        );
+    }
+}
 
-// export default NewJobPostingCont;
+export default NewJobPostingCont;
