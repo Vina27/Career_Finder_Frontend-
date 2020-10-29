@@ -1,27 +1,46 @@
-// import logo from './logo.svg';
+//import logo from './logo.svg';
 import React, { Component } from 'react';
 import './App.css';
-import Header from "./components/Header"
-import JobContainer from "./components/MovieContainer"
-import JobShowContainer from "./components/MovieShowContainer"
+import Header from './components/Header.js';
+//import JobContainer from "./components/JobContainer"
 
-import { Route, Switch, Link, NavLink } from 'react-router-dom'
+// import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
 
 
 class App extends Component {
+  state = {
+    jobs: []
+  }
+
+  componentDidMount(){
+    fetch(`http://localhost:3000/jobs`)
+    .then(resp => resp.json())
+    .then(jobsArr => {
+      //setting state to jobs thats coming from backend 
+      this.setState({
+        jobs: jobsArr
+      })
+      //console.log(jobsArr)
+    })
+  }
+
   render() {
-    return (
-      <div>
-        <Header />
-        <JobContainer />
-        <JobShowContainer />
-      </div>
-    );
+
+      return (
+        <div className="App">
+         < Header />
+         
+           
+          </div>
+      );
   }
 }
 
+
 export default App;
+
+
 
 // function App() {
 //   return (
@@ -42,6 +61,6 @@ export default App;
 //       </header>
 //     </div>
 //   );
-// 
+// }
 
 
