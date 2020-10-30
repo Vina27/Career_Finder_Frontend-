@@ -31,8 +31,8 @@ class JobForm extends Component {
                     <Form.Group>
                         <Form.Input
                         placeholder= "Enter Job Title"
-                        name='jobTitle'
-                        value={this.state.jobTitle }
+                        name='job_title'
+                        value={this.state.job_title }
                         onChange={this.handleInputChange}
                         />
 
