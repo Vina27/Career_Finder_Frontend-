@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Card, Image } from 'semantic-ui-react'
 
 class JobCard extends Component {
     render() {
@@ -6,10 +7,27 @@ class JobCard extends Component {
         //console.log(this.props.jobObj)
         return (
             <div>
-                <p>
-                   {this.props.jobObj.job_title} 
-                   {this.props.jobObj.description} 
-                </p>
+
+            <Card.Group>
+                <Card>
+                    <Card.Content>
+                    <Card.Header>{this.props.jobObj.job_title}</Card.Header>
+                    <Card.Description>{this.props.jobObj.description}</Card.Description>
+                    </Card.Content>
+                </Card>
+      
+                {/* <Card>
+                <Card.Content extra>
+                    <div className='ui two buttons'>
+                        <Button basic color='green'>Delete</Button>
+                        <Button basic color='red'>Save to List
+                    </Button>
+                    </div>
+                </Card.Content>
+                </Card> */}
+
+            </Card.Group>
+
             </div>
         );
     }
