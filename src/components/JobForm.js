@@ -5,9 +5,10 @@ import { Form } from 'semantic-ui-react'
 class JobForm extends Component {
 
     state = {
-        job_Title: "",
+        job_title: "",
         // jobForm: "",
-        description: ""
+        description: "", 
+        // category_id: ""
     }
 
     handleInputChange = (evt) =>{
@@ -29,14 +30,14 @@ class JobForm extends Component {
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
                         <Form.Input
-                        placeholder= "Job Title and Description"
+                        placeholder= "Enter Job Title"
                         name='jobTitle'
                         value={this.state.jobTitle }
                         onChange={this.handleInputChange}
                         />
 
                         <Form.Input
-                        placeholder= "Job Title and Description"
+                        placeholder= "Enter Job Description"
                         name='description'
                         value={this.state.description }
                         onChange={this.handleInputChange}
