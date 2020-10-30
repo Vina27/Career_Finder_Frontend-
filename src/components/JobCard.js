@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import JobForm from './JobForm'
 import { Button, Card, Image } from 'semantic-ui-react'
+import { Divider, Grid } from 'semantic-ui-react';
+
 
 class JobCard extends Component {
     render() {
@@ -8,6 +11,8 @@ class JobCard extends Component {
         return (
             <div>
 
+             {/* <Grid.Row columns={3}>
+                <Grid.Column> */}
             <Card.Group>
                 <Card>
                     <Card.Content>
@@ -27,6 +32,8 @@ class JobCard extends Component {
                 </Card> */}
 
             </Card.Group>
+            {/* </Grid.Column>
+        </Grid.Row> */}
 
             </div>
         );
