@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import JobForm from './components/JobForm'
+import JobForm from './JobForm'
 
 class NewJobPostingCont extends Component {
     render() {

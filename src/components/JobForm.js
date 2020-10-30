@@ -4,7 +4,8 @@ import { Form } from 'semantic-ui-react'
 class JobForm extends Component {
 
     state = {
-        jobForm: "", 
+        jobForm: "",
+        
     }
 
     handleInputChange = (evt) =>{
