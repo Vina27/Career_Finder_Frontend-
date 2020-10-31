@@ -15,12 +15,14 @@ class JobContainer extends Component {
 
 
         render() {
+            //console.log(this.props.categories)
             return (
            
                 <div>
                 
                 <p>This is JobContainer</p>
                 {this.renderJobCards()}
+                <JobForm categories={this.props.categories} createJobPost={this.props.createJobPost} /> 
 
                 
                 </div>
