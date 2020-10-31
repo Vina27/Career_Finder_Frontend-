@@ -68,13 +68,21 @@ class App extends Component {
       this.setState ({
         jobs: updatedJobsArr
       })
+  })//getting newJob object from backend 
+} //end of function 
 
-      
-    })//getting newJob object from backend 
+// deleteJob = (jobObj) => {
+//   console.log(jobObj)
+  
+//   fetch(`http://localhost:3000/jobs/${jobObj.id}`, {
+//       method: "Delete", 
+//   })
+//     .then(resp => resp.json())
+//     .then((deletedJob) => {
+//       console.log(deletedJob)
 
+//     })
 
-    
-  } //end of function 
 
 
 
@@ -84,6 +92,15 @@ class App extends Component {
       return (
         <div className="App">
          < Header />
+
+         {/* <aside className="sidebar">
+          <ul>
+            <li>
+              <Link to=>JobContainer </Link>
+            </li>
+          < / ul>
+
+          < / aside> */}
         
         <Switch>
 

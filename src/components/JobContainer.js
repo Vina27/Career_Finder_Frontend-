@@ -18,10 +18,21 @@ class JobContainer extends Component {
             //console.log(this.props.categories)
             return (
            
-                <div>
+                <div className="Job-Cont-JobCard">
+                    <div className="row">
+                        <div className="column">
                 
                 <p>This is JobContainer</p>
+                {/* <Grid > */}
+                {/* <Grid.Row columns={2}>
+                <Grid.Column>  */}
                 {this.renderJobCards()}
+                {/* </Grid> */}
+                {/* </Grid.Column>
+                </Grid.Row>      */}
+                </div>
+                </div>
+                
                 <JobForm categories={this.props.categories} createJobPost={this.props.createJobPost} /> 
 
                 

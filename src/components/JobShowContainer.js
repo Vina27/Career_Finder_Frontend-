@@ -12,12 +12,12 @@ class JobShowContainer extends Component {
 
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
+        //console.log(this.props.match.params.id)
         let jobObjId = this.props.match.params.id
         fetch(`http://localhost:3000/jobs/${jobObjId}`)
         .then(resp => resp.json())
         .then(jobObj => {
-            console.log(jobObj)
+            //console.log(jobObj)
             this.setState ({
                 job: jobObj
             })
@@ -32,7 +32,7 @@ class JobShowContainer extends Component {
 
     render() {
 
-        console.log(this.props)
+       // console.log(this.props)
         return (
             <div>
 

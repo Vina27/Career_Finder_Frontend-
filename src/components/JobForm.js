@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, SearchCategory, Select } from 'semantic-ui-react'
+import { Form, Button, SearchCategory, Select } from 'semantic-ui-react'
 
 
 
@@ -46,38 +46,44 @@ class JobForm extends Component {
          //console.log(options)
         // console.log(this.props)
         return (
-            <div>
+            <div className="form">
                 <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                        <Form.Input
+                    <Form.Field>
+                    {/* <label>Job Title</label> */}
+                    <input placeholder='Enter Job Title' />
+                    </Form.Field>
+
+                    <Form.Field>
+                    {/* <label>Description</label> */}
+                    <input placeholder='Enter Description' />
+                    </Form.Field>
+
+                        {/* <Form.Group> */}
+                        {/* <Form.Input
                         placeholder= "Enter Job Title"
                         name='job_title'
                         value={this.state.job_title }
                         onChange={this.handleInputChange}
-                        />
+                        /> */}
 
-                        <Form.Input
+                        {/* <Form.Input
                         placeholder= "Enter Job Description"
                         name='description'
                         value={this.state.description }
                         onChange={this.handleInputChange}
-                        /> 
+                        />  */}
+                       
 
                     <Form.Field
                         control={Select}
-                        label='Category'
+                        // label='Category'
                         options={options}
-                        placeholder='Occupation'
+                        placeholder='Category'
                         onChange={this.handleSelect}
 
                     />    
-
-
-
-                     
-
                     <Form.Button content='Submit' />
-                    </Form.Group>
+                    {/* </Form.Group> */}
                 </Form>
             </div>
         );
