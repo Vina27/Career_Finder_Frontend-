@@ -50,12 +50,20 @@ class JobForm extends Component {
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Field>
                     {/* <label>Job Title</label> */}
-                    <input placeholder='Enter Job Title' />
+                    <input placeholder='Enter Job Title'
+                    name='job_title'
+                    value={this.state.job_title }
+                    onChange={this.handleInputChange} />
+                    
                     </Form.Field>
 
                     <Form.Field>
                     {/* <label>Description</label> */}
-                    <input placeholder='Enter Description' />
+                    <input placeholder='Enter Description' 
+                    name='description'
+                    value={this.state.description }
+                    onChange={this.handleInputChange}/>
+
                     </Form.Field>
 
                         {/* <Form.Group> */}
@@ -71,7 +79,7 @@ class JobForm extends Component {
                         name='description'
                         value={this.state.description }
                         onChange={this.handleInputChange}
-                        />  */}
+                        />   */}
                        
 
                     <Form.Field

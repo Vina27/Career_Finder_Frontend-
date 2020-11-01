@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import JobForm from './JobForm'
 import { Button, Card, Image } from 'semantic-ui-react'
 import { Divider, Grid } from 'semantic-ui-react';
-
+import { withRouter } from 'react-router-dom'
 
 class JobCard extends Component {
 
     handleDeleteJob = (evt) => {
         console.log(this.props)
-        //this.props.deleteJob(this.props.job)
+        this.props.deleteJob(this.props.jobObj)
+        this.props.history.push("/")
     }
 
 
@@ -28,10 +29,10 @@ class JobCard extends Component {
                     <Card.Content>
                     <Card.Header>{this.props.jobObj.job_title}</Card.Header>
                     <Card.Description>{this.props.jobObj.description}</Card.Description>
-                    
-                    <Button basic color='red' onClick={this.handleDeleteJob}>
+                    {this.props.deleteJob ? <Button basic color='red' onClick={this.handleDeleteJob}>
                     Delete
-                </Button>
+                </Button> : null }
+                    
                 
                     </Card.Content>
                 </Card>
@@ -55,4 +56,4 @@ class JobCard extends Component {
     }
 }
 
-export default JobCard;
+export default withRouter(JobCard);

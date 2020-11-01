@@ -32,12 +32,12 @@ class JobShowContainer extends Component {
 
     render() {
 
-       // console.log(this.props)
+       console.log(this.props)
         return (
             <div>
 
 
-                <JobCard jobObj={this.state.job} /> 
+                <JobCard jobObj={this.state.job} deleteJob={this.props.deleteJob} /> 
                 
             </div>
         );

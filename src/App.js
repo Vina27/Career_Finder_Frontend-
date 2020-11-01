@@ -71,18 +71,22 @@ class App extends Component {
   })//getting newJob object from backend 
 } //end of function 
 
-// deleteJob = (jobObj) => {
-//   console.log(jobObj)
+deleteJob = (jobObj) => {
+   //console.log(jobObj)
   
-//   fetch(`http://localhost:3000/jobs/${jobObj.id}`, {
-//       method: "Delete", 
-//   })
-//     .then(resp => resp.json())
-//     .then((deletedJob) => {
-//       console.log(deletedJob)
-
-//     })
-
+  fetch(`http://localhost:3000/jobs/${jobObj.id}`, {
+      method: "Delete", 
+  })
+    .then(resp => resp.json())
+    .then(deletedJob => {
+      console.log(deletedJob)
+      let updatedJobsArr = this.state.jobs.filter(job=> job.id !== deletedJob.job.id)
+      this.setState({
+        jobs: updatedJobsArr 
+      })
+      
+    })
+  }
 
 
 
@@ -106,7 +110,7 @@ class App extends Component {
 
          <Route path="/" exact render={() => <JobContainer createJobPost={this.createJobPost} jobArr={this.state.jobs} categories={this.state.categories}/>} />
 
-         <Route path="/:id" render={() => <JobShowContainer />} />
+         <Route path="/:id" render={() => <JobShowContainer deleteJob={this.deleteJob} />} />
 
          </Switch>
          
