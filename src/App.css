@@ -64,9 +64,9 @@
   align-items: center;
   justify-content: center; 
   position: relative; 
-  top: -190px; 
+  /* top: -190px;  */
   float: right; 
-  margin-right: -45%; 
+  /* margin-right: -45%;  */
 }
 
 .App-link {

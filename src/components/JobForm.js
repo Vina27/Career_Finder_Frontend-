@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, SearchCategory, Select } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom'
 
 
 
@@ -30,12 +31,19 @@ class JobForm extends Component {
     handleSubmit = (evt) => {
         evt.preventDefault()
         //console.log(this.state)
-        this.props.createJobPost(this.state)
+        if (this.props.updateJob){
+            this.props.updateJob(this.state)
+            // this.props.history.push("/")
+        }else {
+            this.props.createJobPost(this.state)
+            
+        }
+       
       
     }
 
      render() {
-        
+        console.log(this.props)
          //console.log(this.props.categories)
 
          let options=this.props.categories.map(category => {
@@ -98,4 +106,4 @@ class JobForm extends Component {
     }
 }
 
-export default JobForm;
+export default withRouter(JobForm);

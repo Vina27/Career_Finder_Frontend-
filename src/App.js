@@ -84,10 +84,26 @@ deleteJob = (jobObj) => {
       this.setState({
         jobs: updatedJobsArr 
       })
-      
+     
     })
   }
 
+  handleUpdate = (updatedObj) => {
+    console.log(updatedObj)
+    let updatedJobs = this.state.jobs.map(job => {
+      if (job.id === updatedObj.id){
+        return updatedObj
+      
+      }else {
+        return job 
+      }
+    })
+    console.log(updatedJobs)
+    this.setState({
+      jobs: updatedJobs
+    })
+    
+  }
 
 
   render() {
@@ -110,7 +126,7 @@ deleteJob = (jobObj) => {
 
          <Route path="/" exact render={() => <JobContainer createJobPost={this.createJobPost} jobArr={this.state.jobs} categories={this.state.categories}/>} />
 
-         <Route path="/:id" render={() => <JobShowContainer deleteJob={this.deleteJob} />} />
+         <Route path="/:id" render={() => <JobShowContainer handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />
 
          </Switch>
          

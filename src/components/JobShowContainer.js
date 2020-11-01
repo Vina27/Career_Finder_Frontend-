@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JobCard from './JobCard'
 import NewJobPostingCont from './NewJobPostingCont'
 import { withRouter } from 'react-router-dom'
+import JobForm from './JobForm'
 
 class JobShowContainer extends Component {
 
@@ -24,11 +25,37 @@ class JobShowContainer extends Component {
         })
     }
 
-
-
-
-
-
+    updateJob = (jobObj) => {
+        console.log(jobObj)
+        let jobObjId = this.props.match.params.id
+        let foundCategory = this.props.categories.find(category => {
+            return category.name === jobObj.category 
+          })
+          console.log(foundCategory)
+        fetch(`http://localhost:3000/jobs/${jobObjId}`, {
+            method: "PATCH", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                job_title: jobObj.job_title, 
+                description: jobObj.description, 
+                category_id: foundCategory.id,
+                user_id: this.state.user_id 
+            })
+            
+        })
+        .then(resp => resp.json())
+        .then(updatedObj =>{
+            //console.log(updatedObj)
+            this.props.handleUpdate(updatedObj)
+            this.setState ({
+                job: updatedObj
+            })
+        })
+    
+    }
+    
 
     render() {
 
@@ -38,7 +65,7 @@ class JobShowContainer extends Component {
 
 
                 <JobCard jobObj={this.state.job} deleteJob={this.props.deleteJob} /> 
-                
+                <JobForm updateJob={this.updateJob}  categories={this.props.categories} />
             </div>
         );
     }
