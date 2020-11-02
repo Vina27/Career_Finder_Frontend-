@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom'
 class JobCard extends Component {
 
     handleDeleteJob = (evt) => {
-        console.log(this.props)
+        //console.log(this.props)
         this.props.deleteJob(this.props.jobObj)
         this.props.history.push("/")
     }

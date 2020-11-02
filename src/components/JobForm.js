@@ -43,7 +43,7 @@ class JobForm extends Component {
     }
 
      render() {
-        console.log(this.props)
+        //console.log(this.props)
          //console.log(this.props.categories)
 
          let options=this.props.categories.map(category => {

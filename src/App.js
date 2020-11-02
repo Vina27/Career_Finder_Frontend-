@@ -7,10 +7,9 @@ import JobContainer from './components/JobContainer'
 import JobShowContainer from './components/JobShowContainer'
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 import NavBar from './components/NavBar'
-import List from './components/List'
-
-
-
+//import List from './components/List'
+import Search from './components/Search'
+import Sort from './components/Sort'
 
 
 class App extends Component {
@@ -19,6 +18,10 @@ class App extends Component {
     jobs: [],
     categories: [], 
     user_id: 1, 
+    // searchTerm: "a"
+    searchVal: "",
+    selectedCategory: "ALL"
+
   }
   
   componentDidMount(){
@@ -47,6 +50,42 @@ class App extends Component {
       let foundCategory = this.state.categories.find(category => {
         return category.name === jobObj.category 
       })
+
+      // getSearchVal = (searchVal) => {
+      //   this.setState({
+      //     searchVal 
+      //   })
+      // }
+
+      // filterBasedOnSearchSort = () => {
+      //   let {jobs, selectedCategory, searchVal} = this.state
+      //   let copyOfJobs = [...jobs]
+      //   if (selectedCategory === "All") {
+      //     return jobs
+      //   } else if (selectedCategory === "Category") {
+      //     copyOfJobs.sort((job1, job2) => {
+      //       return job1.category.localeCompare(job2.category)
+      //     })
+      //     return copyOfJobs
+      //   } else if (selectedCategory === "Description") {
+      //     copyOfJobs.sort((job1, job2) => {
+      //       return job1.description.localeCompare(job2.description)
+      //     })
+      //     return copyOfJobs
+      //   } else {
+      //     return jobs.filter((job) => {
+      //       return job.description.toLowerCase().includes(searchVal.toLowerCase())
+      //     })
+      //   }
+      // }
+
+      // changeSelectedCategory = (selectedCategory) => {
+      //   this.setState({
+      //     selectedCategory
+      //   })
+      // }
+
+
 
 
   fetch(`http://localhost:3000/jobs`, {
@@ -107,6 +146,11 @@ deleteJob = (jobObj) => {
     
   }
 
+  // changeSearchTerm = (termFromChild) => {
+  //   this.setState({
+  //     searchTerm: termFromChild
+  //   })
+  // }
 
   render() {
     //console.log(this.state.categories)
@@ -114,18 +158,14 @@ deleteJob = (jobObj) => {
       return (
         <div className="App">
          < Header />
+         <Search />
+     
+     
          <NavBar>
           
          </NavBar>
 
-         {/* <aside className="sidebar">
-          <ul>
-            <li>
-              <Link to=> </Link>
-            </li>
-          < / ul>
-
-          < / aside> */}
+         
         
         <Switch>
           {/* <Route path="/" exact component={Home} /> */}

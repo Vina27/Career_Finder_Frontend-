@@ -4,6 +4,8 @@ import JobCard from './JobCard'
 import {Link} from 'react-router-dom'
 import NewJobPostingCont from './NewJobPostingCont'
 import { Divider, Grid } from 'semantic-ui-react';
+import Search from './Search'
+import Sort from './Sort'
 
 class JobContainer extends Component {
     renderJobCards = () => {
@@ -34,7 +36,7 @@ class JobContainer extends Component {
                 </div>
                 
                 <JobForm categories={this.props.categories} createJobPost={this.props.createJobPost} /> 
-
+          
                 
                 </div>
         );

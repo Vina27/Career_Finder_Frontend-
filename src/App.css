@@ -56,7 +56,6 @@
 } 
 
 .form {
-
   /* border: 2px solid black;  */
   /* border-radius: 4px;   */
   display: flex;
@@ -78,6 +77,22 @@
 /* .NavBar {
   font: black; 
 } */
+
+.ui large fluid icon input {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: relative; 
+
+  
+
+}
+
+
+
+
+
+
 
 @keyframes App-logo-spin {
   from {

@@ -4,6 +4,7 @@ import NewJobPostingCont from './NewJobPostingCont'
 import { withRouter } from 'react-router-dom'
 import JobForm from './JobForm'
 
+
 class JobShowContainer extends Component {
 
     state = {
@@ -67,6 +68,7 @@ class JobShowContainer extends Component {
                 <JobCard jobObj={this.state.job} deleteJob={this.props.deleteJob} /> 
                 
                 <JobForm updateJob={this.updateJob}  categories={this.props.categories} />
+
            
             </div>
         );
