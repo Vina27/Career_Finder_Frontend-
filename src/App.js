@@ -118,8 +118,6 @@ deleteJob = (jobObj) => {
           
          </NavBar>
 
-
-
          {/* <aside className="sidebar">
           <ul>
             <li>

@@ -73,9 +73,11 @@
   color: #61dafb;
 }
 
-.NavBar {
+
+
+/* .NavBar {
   font: black; 
-}
+} */
 
 @keyframes App-logo-spin {
   from {

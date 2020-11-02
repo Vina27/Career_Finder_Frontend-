@@ -5,12 +5,12 @@ const link = {
     width: '100px',
     padding: '12px',
     margin: '0 6px 6px',
-    background: 'blue',
+    background: '#dfe22b',
     textDecoration: 'none',
-    color: 'white',
-  }
-
-
+    color: 'black',
+    float: 'left', 
+    // top: '-200px', 
+}
 
 
 
@@ -18,13 +18,13 @@ const link = {
 class NavBar extends Component {
     render() {
         return (
-    <div class="NavBar">
+    <div className="NavBar">
         <NavLink
           to="/"
           exact
           style={link}
           activeStyle={{
-          background: 'blue'
+          background: '#e28a2b'
         }}
         >Home</NavLink>
 
@@ -34,7 +34,7 @@ class NavBar extends Component {
           exact
           style={link}
           activeStyle={{
-          background: 'blue'
+          background: '#dfe22b'
           }}
         >List</NavLink>
       </div>
