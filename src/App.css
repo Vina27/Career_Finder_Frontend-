@@ -64,13 +64,17 @@
   align-items: center;
   justify-content: center; 
   position: relative; 
-  /* top: -190px;  */
+  top: -100px; 
   float: right; 
-  /* margin-right: -45%;  */
+  /* margin-right: -30%;   */
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.NavBar {
+  font: black; 
 }
 
 @keyframes App-logo-spin {

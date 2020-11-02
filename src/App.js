@@ -3,12 +3,15 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header.js';
 import { withRouter } from 'react-router-dom'
-
 import JobContainer from './components/JobContainer'
 import JobShowContainer from './components/JobShowContainer'
-
-
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import List from './components/List'
+
+
+
+
 
 class App extends Component {
 
@@ -16,8 +19,7 @@ class App extends Component {
     jobs: [],
     categories: [], 
     user_id: 1, 
-    
-}
+  }
   
   componentDidMount(){
     fetch(`http://localhost:3000/jobs`)
@@ -112,18 +114,23 @@ deleteJob = (jobObj) => {
       return (
         <div className="App">
          < Header />
+         <NavBar>
+          
+         </NavBar>
+
+
 
          {/* <aside className="sidebar">
           <ul>
             <li>
-              <Link to=>JobContainer </Link>
+              <Link to=> </Link>
             </li>
           < / ul>
 
           < / aside> */}
         
         <Switch>
-
+          {/* <Route path="/" exact component={Home} /> */}
          <Route path="/" exact render={() => <JobContainer createJobPost={this.createJobPost} jobArr={this.state.jobs} categories={this.state.categories}/>} />
 
          <Route path="/:id" render={() => <JobShowContainer handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />

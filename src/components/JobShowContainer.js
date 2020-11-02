@@ -65,7 +65,9 @@ class JobShowContainer extends Component {
 
 
                 <JobCard jobObj={this.state.job} deleteJob={this.props.deleteJob} /> 
+                
                 <JobForm updateJob={this.updateJob}  categories={this.props.categories} />
+           
             </div>
         );
     }
