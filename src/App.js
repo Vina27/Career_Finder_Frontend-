@@ -18,11 +18,9 @@ class App extends Component {
     jobs: [],
     categories: [], 
     user_id: 1, 
-    // searchTerm: "a"
-    searchVal: "",
-    selectedCategory: "ALL"
-
-  }
+    search: ""
+    // selectedCategory: "ALL"
+}
   
   componentDidMount(){
     fetch(`http://localhost:3000/jobs`)
@@ -34,14 +32,14 @@ class App extends Component {
       })
       //console.log(jobsArr)
     })//first fetch ends here 
+
     fetch(`http://localhost:3000/categories`)
     .then(resp => resp.json())
     .then(categoriesArr => {
       this.setState({
         categories: categoriesArr
-      })
+        })
     })
-
   }
 
     createJobPost = (jobObj) => {
@@ -50,46 +48,10 @@ class App extends Component {
       let foundCategory = this.state.categories.find(category => {
         return category.name === jobObj.category 
       })
-
-      // getSearchVal = (searchVal) => {
-      //   this.setState({
-      //     searchVal 
-      //   })
-      // }
-
-      // filterBasedOnSearchSort = () => {
-      //   let {jobs, selectedCategory, searchVal} = this.state
-      //   let copyOfJobs = [...jobs]
-      //   if (selectedCategory === "All") {
-      //     return jobs
-      //   } else if (selectedCategory === "Category") {
-      //     copyOfJobs.sort((job1, job2) => {
-      //       return job1.category.localeCompare(job2.category)
-      //     })
-      //     return copyOfJobs
-      //   } else if (selectedCategory === "Description") {
-      //     copyOfJobs.sort((job1, job2) => {
-      //       return job1.description.localeCompare(job2.description)
-      //     })
-      //     return copyOfJobs
-      //   } else {
-      //     return jobs.filter((job) => {
-      //       return job.description.toLowerCase().includes(searchVal.toLowerCase())
-      //     })
-      //   }
-      // }
-
-      // changeSelectedCategory = (selectedCategory) => {
-      //   this.setState({
-      //     selectedCategory
-      //   })
-      // }
-
-
-
+    
 
   fetch(`http://localhost:3000/jobs`, {
-    method: "Post", 
+    method: "POST", 
     headers: {
       "Content-Type": "Application/json"
     }, 
@@ -100,7 +62,6 @@ class App extends Component {
       user_id: this.state.user_id 
     })
   })
-
     .then(resp => resp.json())
     .then(newJob => {
       //console.log(newJob)
@@ -116,7 +77,7 @@ deleteJob = (jobObj) => {
    //console.log(jobObj)
   
   fetch(`http://localhost:3000/jobs/${jobObj.id}`, {
-      method: "Delete", 
+      method: "DELETE", 
   })
     .then(resp => resp.json())
     .then(deletedJob => {
@@ -143,33 +104,82 @@ deleteJob = (jobObj) => {
     this.setState({
       jobs: updatedJobs
     })
-    
   }
 
-  // changeSearchTerm = (termFromChild) => {
-  //   this.setState({
-  //     searchTerm: termFromChild
-  //   })
-  // }
+ 
+
+  getSearchVal = (searchVal) => {
+    console.log(searchVal)
+    this.setState({
+      search: searchVal
+    })
+
+  }
+ 
+   filterSearch = () => {
+     let newArr = this.state.jobs.filter( job => {
+       let searchVal = this.state.search.toLowerCase()
+       return job.job_title.toLowerCase().includes(searchVal) || job.job_title.toLowerCase().includes(searchVal)
+     })
+     return newArr
+   }
+   
+
+
+
+
+
+
+
+   // getSearchVal = (searchVal) => {
+   //   this.setState({
+   //     searchVal 
+   //   })
+   // }
+
+   // filterBasedOnSearchSort = () => {
+   //   let {jobs, selectedCategory, searchVal} = this.state
+   //   let copyOfJobs = [...jobs]
+   //   if (selectedCategory === "All") {
+   //     return jobs
+   //   } else if (selectedCategory === "Category") {
+   //     copyOfJobs.sort((job1, job2) => {
+   //       return job1.category.localeCompare(job2.category)
+   //     })
+   //     return copyOfJobs
+   //   } else if (selectedCategory === "Description") {
+   //     copyOfJobs.sort((job1, job2) => {
+   //       return job1.description.localeCompare(job2.description)
+   //     })
+   //     return copyOfJobs
+   //   } else {
+   //     return jobs.filter((job) => {
+   //       return job.description.toLowerCase().includes(searchVal.toLowerCase())
+   //     })
+   //   }
+   // }
+
+   // changeSelectedCategory = (selectedCategory) => {
+   //   this.setState({
+   //     selectedCategory
+   //   })
+   // }
+
 
   render() {
     //console.log(this.state.categories)
 
       return (
         <div className="App">
-         < Header />
-         <Search />
-     
-     
-         <NavBar>
-          
-         </NavBar>
+         < Header className="blink-me"/>
+        
+
 
          
         
         <Switch>
           {/* <Route path="/" exact component={Home} /> */}
-         <Route path="/" exact render={() => <JobContainer createJobPost={this.createJobPost} jobArr={this.state.jobs} categories={this.state.categories}/>} />
+         <Route path="/" exact render={() => <JobContainer search={this.state.search} getSearchVal={this.getSearchVal}  createJobPost={this.createJobPost} jobArr={this.filterSearch()} categories={this.state.categories}/>} />
 
          <Route path="/:id" render={() => <JobShowContainer handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />
 

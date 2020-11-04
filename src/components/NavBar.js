@@ -13,8 +13,6 @@ const link = {
 }
 
 
-
-
 class NavBar extends Component {
     render() {
         return (
