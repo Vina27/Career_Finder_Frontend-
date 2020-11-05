@@ -24,19 +24,27 @@ class JobCard extends Component {
              {/* <Grid.Row columns={2}>
                  <Grid.Column> */}
                  {/* starting from below */}
-             <Card.Group>
+
+                 {/* Turn Card Group back on for orignal job card box styling  */}
+             {/* <Card.Group>
                  <Card>
                      <Card.Content>
-                     <Card.Header>{this.props.jobObj.job_title}</Card.Header>
-                    <Card.Description>{this.props.jobObj.description}</Card.Description>
-                     {this.props.deleteJob ? <Button basic color='red' onClick={this.handleDeleteJob}>
-                     Delete
-                 </Button> : null }
+                     <Card.Header>{this.props.jobObj.job_title}</Card.Header> */}
+                     {this.props.jobObj.job_title}
+                     {this.props.jobObj.description}
+                     {this.props.deleteJob ? <Button className="delete-btn" basic color='red' onClick={this.handleDeleteJob}>
+                      x
+                  </Button> : null }
+                     
+                     {/* <Card.Description>{this.props.jobObj.description}</Card.Description>
+                      {this.props.deleteJob ? <Button basic color='red' onClick={this.handleDeleteJob}>
+                      Delete
+                  </Button> : null }
                     
                 
-                   </Card.Content>
-                  </Card>
-                 {/* ending here at card upper one */}
+                    </Card.Content> */}
+                   {/* </Card> */}
+                 {/* turn on ending here at card upper one */}
                  {/* <Card>
                  <Card.Content extra>
                      <div className='ui two buttons'>
@@ -46,8 +54,8 @@ class JobCard extends Component {
                      </div>
                  </Card.Content>
                  </Card> */}
-             {/* need card.group  */}
-            </Card.Group>
+             {/* need below card.group  */}
+            {/* </Card.Group> */}
             {/* </Grid.Column>
          </Grid.Row> */}
 

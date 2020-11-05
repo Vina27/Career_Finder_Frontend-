@@ -53,6 +53,7 @@ class JobForm extends Component {
 
          //console.log(options)
         // console.log(this.props)
+        
         return (
             <div className="form">
                 <Form onSubmit={this.handleSubmit}>
@@ -90,7 +91,7 @@ class JobForm extends Component {
                         />   */}
                        
 
-                    <Form.Field
+                    <Form.Field 
                         control={Select}
                         // label='Category'
                         options={options}

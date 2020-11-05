@@ -30,6 +30,19 @@
   margin-top: -80px; 
 }
 
+.form {
+  display: inline-block;
+  display: block;
+
+
+}
+
+.delete-btn {
+  font-size: 10px;
+  width: 10px; 
+  text-align: center; 
+}
+
 .blink-me{
   animation: blinker 1s linear infinite;
 }
@@ -40,55 +53,62 @@
   }
 }
 
+.Job-Cont-JobCard{
+  /* display: block; 
+  display: inline-block; */
+  /* border: 1px solid black;  */
+}
 
-.Job-Cont-JobCard {
+
+/* turn this back on for jobcard original styling */
+/* .Job-Cont-JobCard {
   display: flex; 
   min-height: 100vh;
   flex-wrap: wrap; 
   flex-direction: row; 
   padding: 30px;
   justify-content: center;
-} 
+}   */ */
 
-.Job-Cont-JobCard {
+/* .Job-Cont-JobCard {
   /* margin: 15px;  */
   /* background-color: red;  */
-}
+/* } */
 
-.row {
+/* .row {
   display: flex; 
   flex-direction: row; 
   flex-wrap: wrap; 
   width: 30%; 
-  
-}
+} */
 
-.column {
+/* .column {
   display: flex; 
   flex-direction: column; 
   flex-basis: 30%; 
   flex: 1; 
-} 
+}  */
 
-.form {
+/* orignal form styling  */
+/* .form { */
   /* border: 2px solid black;  */
   /* border-radius: 4px;   */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; 
   position: relative; 
   top: -100px; 
-  float: right; 
+  float: right;  */
   /* margin-right: -30%;   */
-}
+/* } */
 
-.Search-Bar{
+/* .Search-Bar{
   position: relative !important; 
   width: 50% !important;
   left: -30% !important;  
   top: 40px !important;
-}
+} */
 
 
 .App-link {
