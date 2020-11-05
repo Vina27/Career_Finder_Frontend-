@@ -7,9 +7,6 @@ import JobCard from './JobCard'
 class NewJobPostingCont extends Component {
     render() {
 
-         
-
-
         return (
             <div>
                 {JobForm}

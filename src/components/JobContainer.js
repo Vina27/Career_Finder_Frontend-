@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JobForm from './JobForm'
 import JobCard from './JobCard'
+//import JobList from './JobList'
 import {Link} from 'react-router-dom'
 import NewJobPostingCont from './NewJobPostingCont'
 import { Divider, Grid, Table } from 'semantic-ui-react';
@@ -31,11 +32,12 @@ class JobContainer extends Component {
                     <div className="row">
                         <div className="column">
                 
-                <p>This is JobContainer</p>
+                {/* <p>This is JobContainer</p> */}
                 {/* <Grid > */}
                 {/* <Grid.Row columns={2}>
                 <Grid.Column>  */}
-                {this.renderJobCards()}
+            
+                {this.renderJobCards()} 
                 {/* </Grid> */}
                 {/* </Grid.Column>
                 </Grid.Row>      */}

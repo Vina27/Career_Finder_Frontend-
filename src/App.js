@@ -4,12 +4,14 @@ import './App.css';
 import Header from './components/Header.js';
 import { withRouter } from 'react-router-dom'
 import JobContainer from './components/JobContainer'
+import JobList from './components/JobList'
 import JobShowContainer from './components/JobShowContainer'
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 import NavBar from './components/NavBar'
 //import List from './components/List'
 import Search from './components/Search'
 import Sort from './components/Sort'
+
 
 
 class App extends Component {
@@ -172,6 +174,7 @@ deleteJob = (jobObj) => {
       return (
         <div className="App">
          < Header className="blink-me"/>
+        
         
 
 

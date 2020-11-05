@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <div>
                 <h1 className="App-header">Career Finder</h1>
-                <NavBar />
+                <NavBar className="NavBar-header" />
               
             </div>
         );

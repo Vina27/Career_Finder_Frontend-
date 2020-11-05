@@ -16,14 +16,18 @@
 .App-header {
   background-color: blueviolet;
   /* min-height: 100vh; */
-  height: 125px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
+/* font-size: calc(10px + 2vmin); */
   font-size: 70px; 
   color: white;
+}
+
+.NavBar-header {
+  margin-top: -80px; 
 }
 
 .blink-me{
@@ -47,7 +51,7 @@
 } 
 
 .Job-Cont-JobCard {
-  margin: 15px; 
+  /* margin: 15px;  */
   /* background-color: red;  */
 }
 
@@ -82,7 +86,7 @@
 .Search-Bar{
   position: relative !important; 
   width: 50% !important;
-  /* left: 25% !important;  */
+  left: -30% !important;  
   top: 40px !important;
 }
 
@@ -103,18 +107,17 @@
 
 
 /* .NavBar {
-  font: black; 
+  font: blue !important; 
+  height: px; 
+
 } */
 
-.ui large fluid icon input {
+/* .ui large fluid icon input {
   display: flex;
   align-items: center;
   justify-content: center; 
   position: relative; 
-
-  
-
-}
+} */
 
 
 

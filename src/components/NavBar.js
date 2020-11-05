@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 const link = {
     width: '100px',
-    padding: '12px',
-    margin: '0 6px 6px',
-    background: '#dfe22b',
+    padding: '25px',
+    margin: '-70px 6px 6px',
+    //background: '#dfe22b',
     textDecoration: 'none',
-    color: 'black',
-    float: 'left', 
-    // top: '-200px', 
+    fontsize: '15px', 
+    color: 'white',
+    float: 'left',
+    fontSize: '20px', 
 }
 
 
@@ -22,7 +23,7 @@ class NavBar extends Component {
           exact
           style={link}
           activeStyle={{
-          background: '#e28a2b'
+          background: ''
         }}
         >Home</NavLink>
 
@@ -32,7 +33,7 @@ class NavBar extends Component {
           exact
           style={link}
           activeStyle={{
-          background: '#dfe22b'
+          background: ''
           }}
         >List</NavLink>
       </div>
