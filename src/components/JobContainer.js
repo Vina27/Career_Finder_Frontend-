@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import JobForm from './JobForm'
 import JobCard from './JobCard'
-//import JobList from './JobList'
+import JobList from './JobList'
 import {Link} from 'react-router-dom'
 import NewJobPostingCont from './NewJobPostingCont'
 import { Divider, Grid, Table } from 'semantic-ui-react';
@@ -16,12 +16,12 @@ import Sort from './Sort'
 
 
 class JobContainer extends Component {
-    renderJobCards = () => {
-        return this.props.jobArr.map((jobObj) => {
-            //console.log(jobObj)
-            return <Link key={jobObj.id} to={`/${jobObj.id}`}> < JobCard jobObj={jobObj} /></Link>
-        }) 
-    }
+    // renderJobCards = () => {
+    //     return this.props.jobArr.map((jobObj) => {
+    //         //console.log(jobObj)
+    //         return <Link key={jobObj.id} to={`/${jobObj.id}`}> < JobCard jobObj={jobObj} /></Link>
+    //     }) 
+    // }
 
     
         render() {
@@ -29,30 +29,14 @@ class JobContainer extends Component {
             return (
            
                 <div className="Job-Cont-JobCard">
-                    <div className="row">
-                        <div className="column">
-                
-                {/* <p>This is JobContainer</p> */}
-                {/* <Grid > */}
-                {/* <Grid.Row columns={2}>
-                <Grid.Column>  */}
-            
-                {this.renderJobCards()} 
-                {/* </Grid> */}
-                {/* </Grid.Column>
-                </Grid.Row>      */}
-                </div>
-                </div>
-                
-                <JobForm categories={this.props.categories} createJobPost={this.props.createJobPost} /> 
-                <div className="Search-Bar" >
-                <Search 
+                 <Search 
                 getSearchVal={this.props.getSearchVal}
                 search={this.props.search} 
                 />
+                <JobForm categories={this.props.categories} createJobPost={this.props.createJobPost} /> 
+                <JobList jobArr={this.props.jobArr}/>
                 </div>
                 
-                </div>
         );
     }
 }
@@ -60,29 +44,4 @@ class JobContainer extends Component {
 export default JobContainer;
 
 
-// return (
-//     <table className="ui celled striped padded table">
-//       <tbody>
-//         <tr>
-//           <th>
-//             <h3 className="ui center aligned header">Job Title</h3>
-//           </th>
-//           <th>
-//             <h3 className="ui center aligned header">Description</h3>
-//           </th>
-//           <th>
-//             <h3 className="ui center aligned header">Category</h3>
-//           </th>
-//           <th>
-//             <h3 className="ui center aligned header">Save to List</h3>
-//           </th>
-//           <th>
-//             <h3 className="ui center aligned header">Delete</h3>
-//           </th>
-//         </tr>
-//         {renderJobCards()}
-//       </tbody>
-//     </table>
-//   );
-// };
 
