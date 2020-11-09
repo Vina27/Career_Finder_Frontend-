@@ -4,13 +4,10 @@ import './App.css';
 import Header from './components/Header.js';
 import { withRouter } from 'react-router-dom'
 import JobContainer from './components/JobContainer'
-import JobList from './components/JobList'
+
 import JobShowContainer from './components/JobShowContainer'
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
-import NavBar from './components/NavBar'
-//import List from './components/List'
-import Search from './components/Search'
-import Sort from './components/Sort'
+import List from './components/List';
 
 
 
@@ -18,8 +15,8 @@ class App extends Component {
 
   state = {
     jobs: [],
-    categories: [], 
-    user_id: 1, 
+    categories: [],  
+    user: {}, 
     search: ""
     // selectedCategory: "ALL"
 }
@@ -42,6 +39,15 @@ class App extends Component {
         categories: categoriesArr
         })
     })
+    //fetching to all users so that we can index into the first user and setting it to the state 
+    fetch(`http://localhost:3000/users`)
+    .then(resp => resp.json())
+    .then(users => {
+     // console.log(users)
+      this.setState({
+        user: users[0]
+      })
+    })
   }
 
     createJobPost = (jobObj) => {
@@ -61,7 +67,7 @@ class App extends Component {
       job_title: jobObj.job_title, 
       description: jobObj.description, 
       category_id: foundCategory.id,
-      user_id: this.state.user_id 
+      user_id: this.state.user.id 
     })
   })
     .then(resp => resp.json())
@@ -127,69 +133,24 @@ deleteJob = (jobObj) => {
    }
    
 
-
-
-
-
-
-
-   // getSearchVal = (searchVal) => {
-   //   this.setState({
-   //     searchVal 
-   //   })
-   // }
-
-   // filterBasedOnSearchSort = () => {
-   //   let {jobs, selectedCategory, searchVal} = this.state
-   //   let copyOfJobs = [...jobs]
-   //   if (selectedCategory === "All") {
-   //     return jobs
-   //   } else if (selectedCategory === "Category") {
-   //     copyOfJobs.sort((job1, job2) => {
-   //       return job1.category.localeCompare(job2.category)
-   //     })
-   //     return copyOfJobs
-   //   } else if (selectedCategory === "Description") {
-   //     copyOfJobs.sort((job1, job2) => {
-   //       return job1.description.localeCompare(job2.description)
-   //     })
-   //     return copyOfJobs
-   //   } else {
-   //     return jobs.filter((job) => {
-   //       return job.description.toLowerCase().includes(searchVal.toLowerCase())
-   //     })
-   //   }
-   // }
-
-   // changeSelectedCategory = (selectedCategory) => {
-   //   this.setState({
-   //     selectedCategory
-   //   })
-   // }
-
-
   render() {
+    //console.log(this.state.user)
     //console.log(this.state.categories)
 
       return (
         <div className="App">
          < Header className="blink-me"/>
         
-        
-
-
-         
-        
-        <Switch>
+          <Switch>
           {/* <Route path="/" exact component={Home} /> */}
-         <Route path="/" exact render={() => <JobContainer search={this.state.search} getSearchVal={this.getSearchVal}  createJobPost={this.createJobPost} jobArr={this.filterSearch()} categories={this.state.categories}/>} />
+         <Route exact path="/"  render={() => <JobContainer search={this.state.search} getSearchVal={this.getSearchVal}  createJobPost={this.createJobPost} jobArr={this.filterSearch()} categories={this.state.categories}/>} />
 
-         <Route path="/:id" render={() => <JobShowContainer handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />
+         <Route exact path="/:id"  render={() => <JobShowContainer handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />
+         <Route exact path="/mylists" render={() => <List  />} />
 
          </Switch>
          
-         
-        </div>
+          </div>
       );
   }
 }

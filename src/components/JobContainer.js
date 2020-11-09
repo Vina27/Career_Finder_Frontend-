@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import JobForm from './JobForm'
-import JobCard from './JobCard'
 import JobList from './JobList'
-import {Link} from 'react-router-dom'
-import NewJobPostingCont from './NewJobPostingCont'
-import { Divider, Grid, Table } from 'semantic-ui-react';
 import Search from './Search'
-import Sort from './Sort'
+
 
 //This container should render job list and remove jobcard 
 // joblist component should import jobcard and map function renderjobcards lines 15-20
@@ -33,6 +29,7 @@ class JobContainer extends Component {
                 getSearchVal={this.props.getSearchVal}
                 search={this.props.search} 
                 />
+
                 <JobForm categories={this.props.categories} createJobPost={this.props.createJobPost} /> 
                 <JobList jobArr={this.props.jobArr}/>
                 </div>

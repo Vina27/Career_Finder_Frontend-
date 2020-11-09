@@ -28,7 +28,7 @@ class NavBar extends Component {
 
        
         <NavLink
-          to="/List"
+          to="/mylists"
           exact
           style={link}
           activeStyle={{

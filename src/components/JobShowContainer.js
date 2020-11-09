@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import JobCard from './JobCard'
-import NewJobPostingCont from './NewJobPostingCont'
 import { withRouter } from 'react-router-dom'
 import JobForm from './JobForm'
 
@@ -63,13 +62,8 @@ class JobShowContainer extends Component {
        //console.log(this.props)
         return (
             <div>
-
-
-                <JobCard jobObj={this.state.job} deleteJob={this.props.deleteJob} /> 
-                
                 <JobForm updateJob={this.updateJob}  categories={this.props.categories} />
-
-           
+                <JobCard jobObj={this.state.job} deleteJob={this.props.deleteJob} /> 
             </div>
         );
     }

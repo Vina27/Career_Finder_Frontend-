@@ -9,9 +9,7 @@ class NewJobPostingCont extends Component {
 
         return (
             <div>
-                {JobForm}
-            
-                {JobCard}
+              
                 <p>This is NewJobPostingCont</p>
               
             </div>

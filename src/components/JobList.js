@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import JobCard from './JobCard'
 import {Link} from 'react-router-dom'
+import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+
 
 class JobList extends Component {
     renderJobCards = () => {
         return this.props.jobArr.map((jobObj) => {
             //console.log(jobObj)
-            return <Link key={jobObj.id} to={`/${jobObj.id}`}> < JobCard jobObj={jobObj} /></Link>
+            return  <Table.Row> 
+                    <JobCard jobObj={jobObj} /> 
+                    </Table.Row>
         }) 
     }
 
@@ -15,33 +19,21 @@ class JobList extends Component {
 // }
 
 
-
-
-
     render() {
     return (
     <table className="ui celled striped padded table">
-      <tbody>
-        <tr>
-          <th>
-            <h3 className="ui center aligned header">Job Title</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Description</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Category</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Save to List</h3>
-              
-          </th>
-          <th>
-            <h3 className="ui center aligned header"></h3>
-          </th>
-        </tr>
+      <Table celled>
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Job Title</Table.HeaderCell>
+        <Table.HeaderCell>Job Description</Table.HeaderCell>
+        <Table.HeaderCell>Save to List</Table.HeaderCell>
+      </Table.Row>
+    </Table.Header>
+    <Table.Body>
         {this.renderJobCards()}
-      </tbody>
+    </Table.Body>
+  </Table>
     </table>
   );
 };

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import JobForm from './JobForm'
-import { Button, Card, Image } from 'semantic-ui-react'
-import { Divider, Grid } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 class JobCard extends Component {
@@ -13,27 +12,40 @@ class JobCard extends Component {
         this.props.history.push("/")
     }
 
-
+    handleAddToList = (evt) => {
+        // console.log("click")
+        fetch(`http://localhost:3000/lists`, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "Application/Json"
+            }, 
+            body: JSON.stringify({
+                user_id: 1, 
+                job_id: this.props.jobObj.id 
+            })
+        })
+        .then(resp => resp.json())
+        .then(list =>{
+            //console.log(list)
+        })
+    }
 
     render() {
 
 //return below shows you job title and description but must render it out on app.js 
-        console.log(this.props.jobObj)
+        //console.log(this.props.jobObj)
         return (
-                 <tr>
-                    <td>{this.props.jobObj.job_title}</td>
-                    <td>{this.props.jobObj.description}</td>
-                    <td>{this.props.jobObj.description}</td>
-                    <td>{this.props.jobObj.description}</td>
-                     <td>
-    {this.props.deleteJob ? <button onClick={this.handleDeleteJob}>
-                      x
-                  </button> : null }
-                     
-                    </td>
-                </tr>
-                
-                   
+        <>
+          <Table.Cell>
+            <Link key={this.props.jobObj.id} to={`/${this.props.jobObj.id}`}>
+              {this.props.jobObj.job_title}
+            </Link>
+            </Table.Cell>
+          <Table.Cell>{this.props.jobObj.description}</Table.Cell>
+         <Table.Cell>
+            {this.props.deleteJob ? <button onClick={this.handleDeleteJob}> x </button> : <button onClick={this.handleAddToList}>Add to list</button> }
+         </Table.Cell>
+        </>
 
         
         );
