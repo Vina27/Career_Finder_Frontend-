@@ -146,7 +146,7 @@ deleteJob = (jobObj) => {
          <Route exact path="/"  render={() => <JobContainer search={this.state.search} getSearchVal={this.getSearchVal}  createJobPost={this.createJobPost} jobArr={this.filterSearch()} categories={this.state.categories}/>} />
 
          <Route exact path="/:id"  render={() => <JobShowContainer handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />
-         <Route exact path="/mylists" render={() => <List  />} />
+         <Route exact path="/mylists" render={() => <JobShowContainer  />} />
 
          </Switch>
          

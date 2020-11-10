@@ -13,9 +13,11 @@ class JobShowContainer extends Component {
 
 
     componentDidMount() {
+       
         //console.log(this.props.match.params.id)
         let jobObjId = this.props.match.params.id
-        fetch(`http://localhost:3000/jobs/${jobObjId}`)
+        console.log(jobObjId)
+        fetch(`http://localhost:3000/lists`)
         .then(resp => resp.json())
         .then(jobObj => {
             //console.log(jobObj)
@@ -26,7 +28,7 @@ class JobShowContainer extends Component {
     }
 
     updateJob = (jobObj) => {
-        console.log(jobObj)
+        console.log(jobObjId)
         let jobObjId = this.props.match.params.id
         let foundCategory = this.props.categories.find(category => {
             return category.name === jobObj.category 
@@ -56,9 +58,10 @@ class JobShowContainer extends Component {
     
     }
     
+    
 
     render() {
-
+        console.log(this.state.job)
        //console.log(this.props)
         return (
             <div>
