@@ -68,7 +68,7 @@
   flex-direction: row; 
   padding: 30px;
   justify-content: center;
-}   */ */
+}   */ 
 
 /* .Job-Cont-JobCard {
   /* margin: 15px;  */
@@ -121,6 +121,15 @@
   margin-left: 0.25em!important;
 } */
 
+.search-input {
+  padding: 4px; 
+}
+
+.Delete-btn {
+  margin-left: 10%; 
+}
+
+
 /* .search-form {
 
 } */
@@ -138,11 +147,6 @@
   justify-content: center; 
   position: relative; 
 } */
-
-
-
-
-
 
 
 @keyframes App-logo-spin {

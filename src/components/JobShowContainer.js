@@ -62,8 +62,14 @@ class JobShowContainer extends Component {
        //console.log(this.props)
         return (
             <div>
-                <JobForm updateJob={this.updateJob}  categories={this.props.categories} />
-                <JobCard jobObj={this.state.job} deleteJob={this.props.deleteJob} /> 
+
+                <JobForm updateJob={this.updateJob}  
+                categories={this.props.categories}
+                 />
+                
+                <JobCard jobObj={this.state.job} 
+                deleteJob={this.props.deleteJob} 
+                /> 
             </div>
         );
     }

@@ -43,11 +43,9 @@ class JobCard extends Component {
             </Table.Cell>
           <Table.Cell>{this.props.jobObj.description}</Table.Cell>
          <Table.Cell>
-            {this.props.deleteJob ? <button onClick={this.handleDeleteJob}> x </button> : <button onClick={this.handleAddToList}>Add to list</button> }
+            {this.props.deleteJob ? <button className="Delete-btn" onClick={this.handleDeleteJob}> Delete </button> : <button onClick={this.handleAddToList}>Add to list</button> }
          </Table.Cell>
         </>
-
-        
         );
     }
 }
