@@ -13,7 +13,7 @@ class JobCard extends Component {
     }
 
     handleAddToList = (evt) => {
-        // console.log("click")
+        console.log("click")
         fetch(`http://localhost:3000/lists`, {
             method: "POST", 
             headers: {
@@ -26,14 +26,16 @@ class JobCard extends Component {
         })
         .then(resp => resp.json())
         .then(list =>{
-            //console.log(list)
+            console.log(list)
         })
     }
 
     render() {
 
+
 //return below shows you job title and description but must render it out on app.js 
         //console.log(this.props.jobObj)
+       
         return (
         <>
           <Table.Cell>

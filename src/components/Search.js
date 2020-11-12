@@ -4,7 +4,7 @@ import { Form } from 'semantic-ui-react'
 class Search extends Component {
 
   handleSearch = (evt) => {
-    console.log(evt.target.value)
+    //console.log(evt.target.value)
     this.props.getSearchVal(evt.target.value)
   }
 

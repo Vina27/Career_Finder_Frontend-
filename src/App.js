@@ -89,17 +89,16 @@ deleteJob = (jobObj) => {
   })
     .then(resp => resp.json())
     .then(deletedJob => {
-      console.log(deletedJob)
+      //console.log(deletedJob)
       let updatedJobsArr = this.state.jobs.filter(job=> job.id !== deletedJob.job.id)
       this.setState({
         jobs: updatedJobsArr 
-      })
-     
+      })    
     })
   }
 
   handleUpdate = (updatedObj) => {
-    console.log(updatedObj)
+    //console.log(updatedObj)
     let updatedJobs = this.state.jobs.map(job => {
       if (job.id === updatedObj.id){
         return updatedObj
@@ -108,20 +107,17 @@ deleteJob = (jobObj) => {
         return job 
       }
     })
-    console.log(updatedJobs)
+    //console.log(updatedJobs)
     this.setState({
       jobs: updatedJobs
     })
   }
 
- 
-
   getSearchVal = (searchVal) => {
-    console.log(searchVal)
+    //console.log(searchVal)
     this.setState({
       search: searchVal
     })
-
   }
  
    filterSearch = () => {

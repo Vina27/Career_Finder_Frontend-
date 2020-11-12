@@ -26,12 +26,12 @@ class JobShowContainer extends Component {
     }
 
     updateJob = (jobObj) => {
-        console.log(jobObj)
+        //console.log(jobObj)
         let jobObjId = this.props.match.params.id
         let foundCategory = this.props.categories.find(category => {
             return category.name === jobObj.category 
           })
-          console.log(foundCategory)
+          //console.log(foundCategory)
         fetch(`http://localhost:3000/jobs/${jobObjId}`, {
             method: "PATCH", 
             headers: {

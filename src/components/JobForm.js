@@ -97,10 +97,11 @@ class JobForm extends Component {
                         options={options}
                         placeholder='Category'
                         onChange={this.handleSelect}
-
                     />    
+
                     <Form.Button content='Submit' />
                     {/* </Form.Group> */}
+                    
                 </Form>
             </div>
         );

@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+Career Finder App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Tools Used 
 
-In the project directory, you can run:
+This app is built using Rails [6.0] as a backend to store and retrieve data. 
 
-### `yarn start`
+The frontend uses React JS for an improved interface. It is styled using Semantic React UI and Vanilla CSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+////////////////////////////////////////////////////////////////////////////////
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Before starting up this App
 
-### `yarn test`
+-Fork and clone from the following repository for the dependant backend (follow README instructions): https://github.com/Vina27/Career_Finder_API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Fork and clone from this repository (https://github.com/Vina27/Career_Finder_Frontend-)
 
-### `yarn build`
+    -run npm i in your terminal 
+        -Installs all the dependant modules required to run this React App.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    -run npm start in your terminal 
+        -this starts up the app. Be sure to run the rails backend first.
+        -then you will be prompted (when prompted enter y for yes) to open this app on a different PORT.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+/////////////////////////////////////////////////////////////////////////////////
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A Breif App Summary 
 
-### `yarn eject`
+This app allows empoloyers to add job listings for positiions they are hiring for and allows people looking for jobs to browse through those listings. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+As an empolyer using the app I can create a new job listing by filling out the form and inputting a Job Title, Description, and Category. I can also update the job posting by clicking on one of the "Job Title" postings and resubmitting the form or I can delete the job by clicking on the "Delete" button.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As a user looking for a job I can browse through jobs by scrolling through the job listings or by using the search bar to filter through Job Titles. I can also click on the "Add to List" button to save jobs I'm interested in and view my entire list of saved jobs by clicking on "List" in the navagation bar on the upper left hand corner of the page. I can then return to the home page by clicking on "Home" next to "List" in the nav. bar. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Created by Maysoon Tabali for Flatiron's School Mod 5 Project. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
