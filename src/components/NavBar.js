@@ -27,15 +27,15 @@ class NavBar extends Component {
         >Home</NavLink>
 
        
-        <NavLink
+        {/* {/* <NavLink
           to="/mylists"
           exact
           style={link}
           activeStyle={{
           background: ''
           }}
-        >List</NavLink>
-      </div>
+        >List</NavLink> */}
+      </div> 
         )
     }
 }

@@ -31,7 +31,7 @@ class JobContainer extends Component {
                 />
 
                 <JobForm categories={this.props.categories} createJobPost={this.props.createJobPost} /> 
-                <JobList jobArr={this.props.jobArr}/>
+                <JobList functionToUpdateList={this.props.functionToUpdateList} jobArr={this.props.jobArr}/>
                 </div>
                 
         );

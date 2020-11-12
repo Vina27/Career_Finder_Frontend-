@@ -9,7 +9,7 @@ class JobList extends Component {
         return this.props.jobArr.map((jobObj) => {
             //console.log(jobObj)
             return  <Table.Row> 
-                    <JobCard jobObj={jobObj} /> 
+                    <JobCard functionToUpdateList={this.props.functionToUpdateList} jobObj={jobObj} /> 
                     </Table.Row>
         }) 
     }
@@ -27,7 +27,7 @@ class JobList extends Component {
       <Table.Row>
         <Table.HeaderCell>Job Title</Table.HeaderCell>
         <Table.HeaderCell>Job Description</Table.HeaderCell>
-        <Table.HeaderCell>Save to List</Table.HeaderCell>
+        <Table.HeaderCell>Delete Job</Table.HeaderCell> 
       </Table.Row>
     </Table.Header>
     <Table.Body>

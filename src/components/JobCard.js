@@ -27,10 +27,13 @@ class JobCard extends Component {
         .then(resp => resp.json())
         .then(list =>{
             console.log(list)
+           this.props.functionToUpdateList(list)
+            
         })
     }
 
     render() {
+        console.log(this.props.functionToUpdateList)
 
 
 //return below shows you job title and description but must render it out on app.js 
@@ -43,9 +46,11 @@ class JobCard extends Component {
               {this.props.jobObj.job_title}
             </Link>
             </Table.Cell>
+
           <Table.Cell>{this.props.jobObj.description}</Table.Cell>
+
          <Table.Cell>
-            {this.props.deleteJob ? <button className="Delete-btn" onClick={this.handleDeleteJob}> Delete </button> : <button onClick={this.handleAddToList}>Add to list</button> }
+            <button className="Delete-btn" onClick={this.handleDeleteJob}> Delete </button>  
          </Table.Cell>
         </>
         );

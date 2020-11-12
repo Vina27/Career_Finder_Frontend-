@@ -17,11 +17,20 @@ class App extends Component {
     jobs: [],
     categories: [],  
     user: {}, 
-    search: ""
+    search: "", 
+    lists: []
     // selectedCategory: "ALL"
 }
   
   componentDidMount(){
+    fetch(`http://localhost:3000/lists`)
+  .then(resp => resp.json())
+  .then(lists =>{
+      this.setState({
+        lists: lists
+      })
+      
+  })
     fetch(`http://localhost:3000/jobs`)
     .then(resp => resp.json())
     .then(jobsArr => {
@@ -128,6 +137,11 @@ deleteJob = (jobObj) => {
      return newArr
    }
    
+   functionToUpdateList = (listFromJobCard) => {
+     this.setState({
+       lists: [...this.state.lists, listFromJobCard]
+     })
+   }
 
   render() {
     //console.log(this.state.user)
@@ -139,10 +153,10 @@ deleteJob = (jobObj) => {
         
           <Switch>
           {/* <Route path="/" exact component={Home} /> */}
-         <Route exact path="/"  render={() => <JobContainer search={this.state.search} getSearchVal={this.getSearchVal}  createJobPost={this.createJobPost} jobArr={this.filterSearch()} categories={this.state.categories}/>} />
+         <Route exact path="/"  render={() => <JobContainer functionToUpdateList={this.functionToUpdateList} search={this.state.search} getSearchVal={this.getSearchVal}  createJobPost={this.createJobPost} jobArr={this.filterSearch()} categories={this.state.categories}/>} />
 
-         <Route exact path="/:id"  render={() => <JobShowContainer handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />
-         <Route exact path="/mylists" render={() => <List  />} />
+         <Route exact path="/:id"  render={() => <JobShowContainer  handleUpdate={this.handleUpdate} categories={this.state.categories} deleteJob={this.deleteJob} />} />
+         {/* <Route exact path="/mylists" render={() => <List lists={this.state.lists} />} /> */}
 
          </Switch>
          
@@ -150,7 +164,6 @@ deleteJob = (jobObj) => {
       );
   }
 }
-
 
 export default withRouter(App);
 

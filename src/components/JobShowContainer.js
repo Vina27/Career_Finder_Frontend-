@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import JobCard from './JobCard'
 import { withRouter } from 'react-router-dom'
 import JobForm from './JobForm'
-
+import { Table } from 'semantic-ui-react';
 
 class JobShowContainer extends Component {
 
@@ -11,14 +11,14 @@ class JobShowContainer extends Component {
         user_id: 1, 
     }
 
-
+//why are we fetching to jobs/jobObjId and figure out what jobObjId is 
     componentDidMount() {
         //console.log(this.props.match.params.id)
         let jobObjId = this.props.match.params.id
         fetch(`http://localhost:3000/jobs/${jobObjId}`)
         .then(resp => resp.json())
         .then(jobObj => {
-            //console.log(jobObj)
+            console.log(jobObj)
             this.setState ({
                 job: jobObj
             })
@@ -62,14 +62,16 @@ class JobShowContainer extends Component {
        //console.log(this.props)
         return (
             <div>
-
                 <JobForm updateJob={this.updateJob}  
                 categories={this.props.categories}
                  />
                 
+                
                 <JobCard jobObj={this.state.job} 
                 deleteJob={this.props.deleteJob} 
+                
                 /> 
+                {/* <button className="Delete-btn" onClick={this.handleDeleteJob}> Delete </button>  */}
             </div>
         );
     }
