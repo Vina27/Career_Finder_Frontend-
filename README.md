@@ -29,9 +29,9 @@ A Breif App Summary
 
 This app allows empoloyers to add job listings for positiions they are hiring for and allows people looking for jobs to browse through those listings. 
 
-As an empolyer using the app I can create a new job listing by filling out the form and inputting a Job Title, Description, and Category. I can also update the job posting by clicking on one of the "Job Title" postings and resubmitting the form or I can delete the job by clicking on the "Delete" button.
+As an empolyer using the app I can create a new job listing by filling out the form and inputting a Job Title, Description, and Category. I can also update the job posting by clicking on one of the "Job Title" postings and resubmitting the form or I can delete the job by clicking on the "Delete" button. I can then return to the home page by clicking on "Home" in the nav. bar in the upper left hand corner. 
 
-As a user looking for a job I can browse through jobs by scrolling through the job listings or by using the search bar to filter through Job Titles. I can also click on the "Add to List" button to save jobs I'm interested in and view my entire list of saved jobs by clicking on "List" in the navagation bar on the upper left hand corner of the page. I can then return to the home page by clicking on "Home" next to "List" in the nav. bar. 
+As a user looking for a job I can browse through jobs by scrolling through the job listings or by using the search bar to filter through Job Titles.
 
 Created by Maysoon Tabali for Flatiron's School Mod 5 Project. 
 

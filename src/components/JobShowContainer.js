@@ -11,7 +11,7 @@ class JobShowContainer extends Component {
         user_id: 1, 
     }
 
-//why are we fetching to jobs/jobObjId and figure out what jobObjId is 
+
     componentDidMount() {
         //console.log(this.props.match.params.id)
         let jobObjId = this.props.match.params.id
