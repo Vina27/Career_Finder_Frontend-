@@ -27,7 +27,7 @@ Before starting up this App
 
 A Breif App Summary 
 
-This app allows empoloyers to add job listings for positiions they are hiring for and allows people looking for jobs to browse through those listings. 
+This app allows empoloyers to add job listings for positions they are hiring for and allows job seekers to browse through those listings. 
 
 As an empolyer using the app I can create a new job listing by filling out the form and inputting a Job Title, Description, and Category. I can also update the job posting by clicking on one of the "Job Title" postings and resubmitting the form or I can delete the job by clicking on the "Delete" button. I can then return to the home page by clicking on "Home" in the nav. bar in the upper left hand corner. 
 
